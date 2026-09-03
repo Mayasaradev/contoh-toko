@@ -1,115 +1,27 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="light">
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>Asa Sipaling Asa - Toko Sembako</title>
-    <!-- Font & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo PWA Offline</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4CAF50">
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; padding: 20px; max-width: 400px; margin: auto; }
+    h1 { color: #4CAF50; text-align: center; }
+    input, button { padding: 10px; font-size: 16px; }
+    input { width: 70%; }
+    button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+    ul { list-style: none; padding: 0; }
+    li { background: white; padding: 10px; margin-top: 8px; border-radius: 5px; }
+  </style>
 </head>
 <body>
+  <h1>📝 Todo Offline</h1>
+  <input id="taskInput" placeholder="Tulis tugas...">
+  <button onclick="addTask()">Tambah</button>
+  <ul id="taskList"></ul>
 
-    <!-- ===== HEADER ===== -->
-    <header class="header">
-        <div class="container header-inner">
-            <a href="#" class="logo">
-                <div class="logo-icon"><i class="fas fa-store"></i></div>
-                Asa<span>Sipaling</span>
-            </a>
-            <div class="header-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon" id="themeIcon"></i>
-                </button>
-                <button class="cart-btn" id="cartOpenBtn" aria-label="Buka keranjang">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-badge hidden" id="cartBadge">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- ===== MAIN ===== -->
-    <main class="container">
-
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero-badge"><i class="fas fa-bolt"></i> Fresh & Berkualitas</div>
-            <h1>Asa <span>Sipaling Asa</span></h1>
-            <p>Toko sembako terpercaya untuk UMKM & pecinta masak. Harga bersahabat, kualitas juara.</p>
-            <div class="hero-tags">
-                <span><i class="fas fa-check-circle" style="color:var(--accent);"></i> Beras premium</span>
-                <span><i class="fas fa-check-circle" style="color:var(--accent);"></i> Telur segar</span>
-                <span><i class="fas fa-check-circle" style="color:var(--accent);"></i> Bawang pilihan</span>
-            </div>
-        </section>
-
-        <!-- PRODUCTS -->
-        <section>
-            <div class="section-title">
-                <i class="fas fa-box-open"></i> Katalog Produk
-            </div>
-            <div class="products-grid" id="productsGrid">
-                <!-- Products injected by JS -->
-            </div>
-        </section>
-
-        <!-- TESTIMONIALS -->
-        <section class="testimonials">
-            <div class="section-title">
-                <i class="fas fa-quote-left"></i> Testimoni
-            </div>
-            <div class="testimonials-grid" id="testimonialsGrid">
-                <!-- injected by JS -->
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer class="footer">
-            &copy; 2026 <span>Asa Sipaling Asa</span> — Sembako untuk semua
-        </footer>
-    </main>
-
-    <!-- ===== CART OVERLAY & PANEL ===== -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-panel" id="cartPanel">
-        <div class="cart-header">
-            <h2><i class="fas fa-shopping-bag"></i> Keranjang</h2>
-            <button class="cart-close" id="cartCloseBtn"><i class="fas fa-times"></i></button>
-        </div>
-        <div id="cartContent">
-            <div class="cart-empty">
-                <i class="fas fa-shopping-basket"></i>
-                <p>Keranjang masih kosong.<br />Yuk, mulai belanja!</p>
-            </div>
-        </div>
-        <div class="cart-footer hidden" id="cartFooter">
-            <div class="cart-total">
-                <span>Total</span>
-                <span class="total-price" id="cartTotalPrice">Rp 0</span>
-            </div>
-            <button class="btn-checkout" id="checkoutBtn">
-                <i class="fas fa-whatsapp"></i> Belanja Sekarang via WhatsApp
-            </button>
-        </div>
-    </div>
-
-    <!-- ===== WHATSAPP FLOAT ===== -->
-    <a href="#" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener" aria-label="Hubungi via WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- ===== TOAST ===== -->
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
-        <span id="toastMessage">Produk ditambahkan!</span>
-    </div>
-
-    <!-- ===== JAVASCRIPT ===== -->
-    <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
